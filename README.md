@@ -18,7 +18,7 @@ To view all API endponts with swagger docs visit
 
 ## Is Flask == FastAPI?
 
-The answer is no. FastAPI doesnot event use Flask in the background also the analogue of build urls is quite similar but not the same
+The answer is no. FastAPI does not even use Flask in the background also the analogue of build urls is quite similar but not the same
 
 1. FastAPI does have jinja dependency pre-installed but it does not have itsdangerous and other similar dependencies
 
@@ -32,4 +32,22 @@ The answer is no. FastAPI doesnot event use Flask in the background also the ana
 
 6. In conclusion FastAPI is not Flask at all. They are all python frameworks
 
-7. 
+7. The default ports are also different
+
+## Similarities
+
+While Flask is not FastAPI it does have dataclasses with can be used to convent it's models into serialized database models for API related queries for example
+
+```python
+class Product:
+    id: int
+    name: str
+    price: float
+
+    .....
+    # Implementation condition as needed
+```
+
+Flask also uses gunicorn web-server in production which is a synchronous web server gateway unlike unicorn an asynchronous web-server possible of handling async request.
+
+Mind you while theses are out of the box differences, and advanced developer can actually work around all these and make it quite similar though different but this will or might require extra time to add functionality which is already out of the box in another framework.
